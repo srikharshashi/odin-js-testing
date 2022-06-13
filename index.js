@@ -1,19 +1,19 @@
-function capitalize(strr){
+export function capitalize(strr){
     return strr.charAt(0).toUpperCase()+strr.slice(1);
 }
 
-function reverse(strr) {
+export function reverse(strr) {
     return strr.reverse();
 }
 
-const calculator={
+export const calculator={
     add:(a,b)=>a+b,
     sub:(a,b)=>a-b,
     div:(a,b)=>a/b,
     mul:(a,b)=>a*b
 };
 
-function ceaser(strr){
+export function ceaser(strr){
     let newstr="";
     for(let i=0;i<strr.length;i++){
         
@@ -26,7 +26,32 @@ function ceaser(strr){
         else if(strr.charCodeAt(i)==90){
             newstr+="A";
         }
+        else{
+            newstr+=strr.charAt(i);
+        }
     }
     return newstr;
 }
 
+
+export function analyzeArr(arr) {
+    let max=arr[0];
+    let min=arr[0];
+    let avg=0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+        else if(arr[i]<min){
+            min=arr[i];
+        }
+        avg+=arr[i];
+    }
+    
+    return {
+        average:avg,
+        min:min,
+        max:max,
+        length:arr.length
+    }
+}
