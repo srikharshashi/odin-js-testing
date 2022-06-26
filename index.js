@@ -3,7 +3,11 @@ export function capitalize(strr){
 }
 
 export function reverse(strr) {
-    return strr.reverse();
+    let newString = "";
+    for (let i = strr.length - 1; i >= 0; i--) {
+        newString += strr[i];
+    }
+    return newString;
 }
 
 export const calculator={
@@ -49,9 +53,10 @@ export function analyzeArr(arr) {
     }
     
     return {
-        average:avg,
+        average:avg/arr.length,
         min:min,
         max:max,
         length:arr.length
     }
 }
+
